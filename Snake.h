@@ -12,4 +12,5 @@ struct Snake
 
 
 	void InitSnake();
+	move_direction Change_dir(move_direction prev_dir);
 };
