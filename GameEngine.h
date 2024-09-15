@@ -7,6 +7,8 @@ struct GameEngine
 	std::string player_name;
 	int difficulty;
 
-	void game_render(std::string name);
+
+	std::string Set_name();
+	void Game_render(std::string name);
 	void Update_game(int dif)
 };
