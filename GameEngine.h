@@ -20,6 +20,7 @@ struct GameEngine
 	int Set_difficulty();
 	void Game_init();
 	void Game_render(std::string name);
+	void Collision_check();
 	void Update_game(int dif);
 
 
