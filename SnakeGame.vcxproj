@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
   </ItemGroup>
   <ItemGroup>

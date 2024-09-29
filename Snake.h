@@ -7,9 +7,10 @@ struct Snake
 
 	int tail_len;
 
-	enum move_direction { STOP, LEFT, RIGHT, UP, DOWN };
+	enum move_direction { LEFT, RIGHT, UP, DOWN };
 	move_direction snake_dir;
 
 
 	void InitSnake();
+	void ChangeDir(move_direction initDir);
 };

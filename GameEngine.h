@@ -8,5 +8,6 @@ struct GameEngine
 	int difficulty;
 
 	void game_render(std::string name);
-	void Update_game(int dif)
+	void Update_game(int dif);
+	void Input_name();
 };
