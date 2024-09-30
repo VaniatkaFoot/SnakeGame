@@ -36,7 +36,7 @@
 4. Выполните сборку.
 
 ```shell
-git clone git@github.com:mcroitor/SnakeGame.git
+git clone https://github.com/VaniatkaFoot/SnakeGame.git
 cd SnakeGame
-make
+mingw32-make
 ```
