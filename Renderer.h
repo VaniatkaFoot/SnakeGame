@@ -1,9 +1,11 @@
 #pragma once
 
 #include "AbstractRenderer.h"
+#include <vector>
+#include <string>
 
 class Render : public AbstractRender {
 public:
-	virtual void DrawGame(Field& gameBoard, char** image);
-	virtual void WriteText(Field& gameBoard, char* text);
+	void DrawGame(Field& gameBoard, std::vector<std::vector<char>>& image) override;
+	void WriteText(Field& gameBoard, const std::string& text) override;
 };

@@ -2,6 +2,8 @@
 
 struct Field
 {
-	const int width = 80;
-	const int height = 20;
+	const int width;
+	const int height;
+
+	Field(int w = 80, int h = 20) : width(w), height(h) {}
 };
