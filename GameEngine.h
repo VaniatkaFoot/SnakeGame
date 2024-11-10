@@ -1,17 +1,12 @@
 #pragma once
-#include <iostream>
-#include <string>
+#include <iostream> 
 
 struct GameEngine
 {
-	const int res_x;
-	const int res_y;
+	const int res_x = 80, res_y = 25;
 	std::string player_name;
 	int difficulty;
 
-	GameEngine(int width = 80, int height = 25, int dif = 1)
-		: res_x(width), res_y(height), difficulty(dif) {}
-
-	void UpdateGame(int dif);
-	void InputName();
+	void Update_game(int dif);
+	void Input_name();
 };

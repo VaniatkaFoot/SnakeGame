@@ -1,39 +1,56 @@
 #include "Apple.h"
-#include <cstdlib>
+#include <stdlib.h>
 
-Apple::Apple() : apple_pos_x(0), apple_pos_y(0) {}
+Apple::Apple() { apple_pos_x = 0; apple_pos_y = 0; }
 
-Apple::Apple(int positionX, int positionY)
-	: apple_pos_x(positionX), apple_pos_y(positionY) {}
-
-void Apple::apple_init(int field_width, int field_height)
+Apple::Apple(const int positionX, int positionY)
 {
-	do {
-		apple_pos_x = rand() % field_width;
-		apple_pos_y = rand() % field_height;
-	} while (apple_pos_x == field_width / 2 && apple_pos_y == field_height / 2);
+	apple_pos_x = positionX;
+	apple_pos_y = positionY;
 }
 
-void Apple::apple_spawn(int prev_x, int prev_y, int field_width, int field_height)
+Apple::Apple(const Apple& other)
 {
-	do {
-		apple_pos_x = rand() % field_width;
-		apple_pos_y = rand() % field_height;
+	apple_pos_x = other.apple_pos_x;
+	apple_pos_y = other.apple_pos_y;
+}
+
+void Apple::apple_init()
+{
+	do
+	{
+		apple_pos_x = rand() % 80;
+		apple_pos_y = rand() % 20;
+	} while (apple_pos_x == 40 && apple_pos_y == 10);
+};
+
+void Apple::apple_spawn(int prev_x, int prev_y)
+{
+	do
+	{
+		apple_pos_x = rand() % 80;
+		apple_pos_y = rand() % 20;
 	} while (apple_pos_x == prev_x && apple_pos_y == prev_y);
-}
 
-bool Apple::operator==(const Apple& other) const {
+};
+
+Apple Apple::operator = (const Apple& other) {
+	apple_pos_x = other.apple_pos_x;
+	apple_pos_y = other.apple_pos_y;
+	return *this;
+}
+bool Apple::operator == (const Apple& other) const {
 	return apple_pos_x == other.apple_pos_x && apple_pos_y == other.apple_pos_y;
 }
 
-std::istream& operator>>(std::istream& in, Apple& apple) {
+std::istream& operator >> (std::istream& in, Apple& apple) {
 	int x, y;
 	in >> x >> y;
 	apple = Apple(x, y);
 	return in;
 }
 
-std::ostream& operator<<(std::ostream& out, const Apple& apple) {
-	out << apple.apple_pos_x << " " << apple.apple_pos_y;
+std::ostream& operator << (std::ostream& out, const Apple& apple) {
+	out << apple.apple_pos_x << apple.apple_pos_y;
 	return out;
 }
